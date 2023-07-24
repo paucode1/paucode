@@ -1,4 +1,9 @@
-def va(i, nper, pago, vf):
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+def VA(i:float, nper:int, pago, vf):
     """Valor actual o valor presente. Se utiliza para actualizar el valor final a una tasa i% en nper periodos de tiempo
 
     Args:
@@ -12,7 +17,7 @@ def va(i, nper, pago, vf):
     """
     return vf/(1+i)**nper
 
-def vf(i, nper, pago, va):
+def VF(i:float, nper:int, pago, va):
     """valor actual o capitalización
 
     Args:
@@ -25,3 +30,24 @@ def vf(i, nper, pago, va):
         _type_: Valor final
     """
     return va*(1+i)**nper
+
+# VAN
+def VAN(i:float, flujo):
+    flujo=flujo
+    van=0.0
+    for n, fe in enumerate(flujo):
+        van += fe/(1+i)**n
+    return van
+
+# TIR
+def TIR(flujo):
+    flujo=flujo
+    i=0.00000
+    van=1
+    while van!=0.00:
+        van=0
+        for n, fe in enumerate(flujo):
+            van += fe/(1+i)**n
+        i += 0.001
+        van=round(van, ndigits=2)
+    return i
