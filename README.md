@@ -1,7 +1,9 @@
 # paucode
 
 ![Alt text](<logo.png>)
-Escribir funciones para trabajos
+
+
+Escribir funciones para trabajos en economia
 
 
 ### Instalación
