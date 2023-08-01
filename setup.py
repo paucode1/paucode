@@ -4,7 +4,7 @@ readme = open("./README.md", "r")
 
 setup(
     name="paucode",
-    packages=find_packages,
+    packages=find_packages(),
     version="0.03",
     description="funciones de ayuda en trabajo como economista",
     long_description=readme.read(),
@@ -18,7 +18,7 @@ setup(
     include_package_data=True,
     install_requires=[
         "numpy",
-        "matplotlib"
+        "matplotlib",
         #agregar todas las dependencias
     ]
 )
