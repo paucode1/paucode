@@ -5,7 +5,7 @@ readme = open("./README.md", "r")
 setup(
     name="paucode",
     packages=find_packages,
-    version="0.02",
+    version="0.03",
     description="funciones de ayuda en trabajo como economista",
     long_description=readme.read(),
     long_description_content_type="text/markdown",
